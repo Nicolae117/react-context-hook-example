@@ -3,7 +3,7 @@ import { ArticleContext } from '../../context/articleContext';
 import "./AddArticle.css";
 
 const AddArticle = () => {
-    const { saveArticle } = useContext(ArticleContext)
+    const { dispatch } = useContext(ArticleContext)
     const [ article, setArticle ] = useState();
 
     const handleArticleData = e => {
@@ -15,7 +15,9 @@ const AddArticle = () => {
 
     const addNewArticle = e => {
         e.preventDefault();
-        saveArticle(article);
+        dispatch({
+            type: "ADD_ARTICLE", article
+        })
 
         document.getElementById("AddArticleForm").reset();//clear form data
     }

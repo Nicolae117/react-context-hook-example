@@ -2,12 +2,8 @@ import React,{ useContext } from "react";
 import {ArticleContext } from "../context/articleContext";
 import Article from '../compponents/Article/Article';
 
-
-
-const Articles = () => {
-  
+const Articles = () => {  
   const { articles } = useContext(ArticleContext);
-
   return (
     <div>
       {articles.map((article) => (
